@@ -1,0 +1,15 @@
+log4cplus.logger.BrokerAccount=INFO,BrokerAccountLogFile
+
+log4cplus.appender.BrokerAccountLogFile = log4cplus::FileAppender
+log4cplus.appender.BrokerAccountLogFile.File = log/BrokerAccount.log
+log4cplus.appender.BrokerAccountLogFile.Append = true
+log4cplus.appender.BrokerAccountLogFile.layout = log4cplus::PatternLayout
+log4cplus.appender.BrokerAccountLogFile.layout.ConversionPattern = %D{%H:%M:%S} %-5p %c %m%n
+
+log4cplus.logger.Market=INFO,MarketFile
+log4cplus.appender.MarketFile = log4cplus::FileAppender
+log4cplus.appender.MarketFile.File = log/Market.log
+log4cplus.appender.MarketFile.Append = true
+log4cplus.appender.MarketFile.layout = log4cplus::PatternLayout
+log4cplus.appender.MarketFile.layout.ConversionPattern = %D{%H:%M:%S} %-5p %c %m%n
+

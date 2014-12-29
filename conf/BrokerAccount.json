@@ -1,0 +1,19 @@
+{
+    "SW": {
+        "BrokerId": "4200",
+        "FeedServers": [
+            {
+                "IP": "tcp://27.115.78.100",
+                "Port":41213 
+            }
+        ],
+        "Password": "654321",
+        "TradeServers": [
+            {
+                "IP": "tcp://27.115.78.100",
+                "Port":41205 
+            }
+        ],
+        "UserId": "11806775"
+    }
+}
