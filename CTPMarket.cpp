@@ -7,6 +7,11 @@
 
 
 CTPMarket::CTPMarket()
+    :mRequestId(0)
+    ,mFrontId(0)
+    ,mSessionId(0)
+    ,mIsFrontConnected(false)
+    ,mLog(Logger::getInstance("Market"))
 {
     mIsFrontConnected = false;
     mFrontId = 0;

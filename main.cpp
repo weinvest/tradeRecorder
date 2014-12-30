@@ -16,7 +16,12 @@ int main()
     }
 
     BrokerAccountManager accounts;
-    accounts.Load("const/Account.json");
+    accounts.Load("conf/Account.json");
+    if(0 == accounts.Accounts().size())
+    {
+        std::cout<<"load account failed"<<std::endl;
+        exit(-1);
+    }
 
     CTPMarket market;
     market.Initialize(accounts.Accounts().front());
