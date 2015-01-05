@@ -63,19 +63,19 @@ void CTPMarket::OnRspOrderAction(CThostFtdcInputOrderActionField *pOrder, CThost
 {
     std::string funcName = "OnRspOrderAction(";
     INFO(mLog,funcName<<pRspInfo->ErrorID<<","<<pRspInfo->ErrorMsg<<")BrokerID:"<<pOrder->BrokerID
-    <<"InvestorID:"<<pOrder->InvestorID
-    <<"OrderActionRef:"<<pOrder->OrderActionRef
-    <<"OrderRef:"<<pOrder->OrderRef
-    <<"RequestID:"<<pOrder->RequestID
-    <<"FrontID:"<<pOrder->FrontID
-    <<"SessionID:"<<pOrder->SessionID
-    <<"ExchangeID:"<<pOrder->ExchangeID
-    <<"OrderSysID:"<<pOrder->OrderSysID
-    <<"ActionFlag:"<<pOrder->ActionFlag
-    <<"LimitPrice:"<<pOrder->LimitPrice
-    <<"VolumeChange:"<<pOrder->VolumeChange
-    <<"UserID:"<<pOrder->UserID
-    <<"InstrumentID:"<<pOrder->InstrumentID);
+    <<",InvestorID:"<<pOrder->InvestorID
+    <<",OrderActionRef:"<<pOrder->OrderActionRef
+    <<",OrderRef:"<<pOrder->OrderRef
+    <<",RequestID:"<<pOrder->RequestID
+    <<",FrontID:"<<pOrder->FrontID
+    <<",SessionID:"<<pOrder->SessionID
+    <<",ExchangeID:"<<pOrder->ExchangeID
+    <<",OrderSysID:"<<pOrder->OrderSysID
+    <<",ActionFlag:"<<pOrder->ActionFlag
+    <<",LimitPrice:"<<pOrder->LimitPrice
+    <<",VolumeChange:"<<pOrder->VolumeChange
+    <<",UserID:"<<pOrder->UserID
+    <<",InstrumentID:"<<pOrder->InstrumentID);
 }
 
 void CTPMarket::OnRspOrderInsert(CThostFtdcInputOrderField *pOrder, CThostFtdcRspInfoField *pRspInfo, int nRequestID,bool /*bIsLast*/)
@@ -86,28 +86,28 @@ void CTPMarket::OnRspOrderInsert(CThostFtdcInputOrderField *pOrder, CThostFtdcRs
         funcName = "OnErrRtnOrderInsert(";
     }
     INFO(mLog,funcName<<pRspInfo->ErrorID<<","<<pRspInfo->ErrorMsg<<"):BrokerID:"<<pOrder->BrokerID
-    <<"InvestorID:"<<pOrder->InvestorID
-    <<"InstrumentID:"<<pOrder->InstrumentID
-    <<"OrderRef:"<<pOrder->OrderRef
-    <<"UserID:"<<pOrder->UserID
-    <<"OrderPriceType:"<<pOrder->OrderPriceType
-    <<"Direction:"<<pOrder->Direction
-    <<"CombOffsetFlag:"<<pOrder->CombOffsetFlag
-    <<"CombHedgeFlag:"<<pOrder->CombHedgeFlag
-    <<"LimitPrice:"<<pOrder->LimitPrice
-    <<"VolumeTotalOriginal:"<<pOrder->VolumeTotalOriginal
-    <<"TimeCondition:"<<pOrder->TimeCondition
-    <<"GTDDate:"<<pOrder->GTDDate
-    <<"VolumeCondition:"<<pOrder->VolumeCondition
-    <<"MinVolume:"<<pOrder->MinVolume
-    <<"ContingentCondition:"<<pOrder->ContingentCondition
-    <<"StopPrice:"<<pOrder->StopPrice
-    <<"ForceCloseReason:"<<pOrder->ForceCloseReason
-    <<"IsAutoSuspend:"<<pOrder->IsAutoSuspend
-    <<"BusinessUnit:"<<pOrder->BusinessUnit
-    <<"RequestID:"<<pOrder->RequestID
-    <<"UserForceClose:"<<pOrder->UserForceClose
-    <<"IsSwapOrder:"<<pOrder->IsSwapOrder);
+    <<",InvestorID:"<<pOrder->InvestorID
+    <<",InstrumentID:"<<pOrder->InstrumentID
+    <<",OrderRef:"<<pOrder->OrderRef
+    <<",UserID:"<<pOrder->UserID
+    <<",OrderPriceType:"<<pOrder->OrderPriceType
+    <<",Direction:"<<pOrder->Direction
+    <<",CombOffsetFlag:"<<pOrder->CombOffsetFlag
+    <<",CombHedgeFlag:"<<pOrder->CombHedgeFlag
+    <<",LimitPrice:"<<pOrder->LimitPrice
+    <<",VolumeTotalOriginal:"<<pOrder->VolumeTotalOriginal
+    <<",TimeCondition:"<<pOrder->TimeCondition
+    <<",GTDDate:"<<pOrder->GTDDate
+    <<",VolumeCondition:"<<pOrder->VolumeCondition
+    <<",MinVolume:"<<pOrder->MinVolume
+    <<",ContingentCondition:"<<pOrder->ContingentCondition
+    <<",StopPrice:"<<pOrder->StopPrice
+    <<",ForceCloseReason:"<<pOrder->ForceCloseReason
+    <<",IsAutoSuspend:"<<pOrder->IsAutoSuspend
+    <<",BusinessUnit:"<<pOrder->BusinessUnit
+    <<",RequestID:"<<pOrder->RequestID
+    <<",UserForceClose:"<<pOrder->UserForceClose
+    <<",IsSwapOrder:"<<pOrder->IsSwapOrder);
 
 }
 
@@ -141,62 +141,62 @@ void CTPMarket::OnRtnOrder(CThostFtdcOrderField *pOrder)
     if(nullptr != pOrder)
     {
         INFO(mLog,"OnRtnOrder---------BrokerID:"<<pOrder->BrokerID
-        <<"InvestorID:"<<pOrder->InvestorID
-        <<"InstrumentID:"<<pOrder->InstrumentID
-        <<"OrderRef:"<<pOrder->OrderRef
-        <<"UserID:"<<pOrder->UserID
-        <<"OrderPriceType:"<<pOrder->OrderPriceType
-        <<"Direction:"<<pOrder->Direction
-        <<"CombOffsetFlag:"<<pOrder->CombOffsetFlag
-        <<"CombHedgeFlag:"<<pOrder->CombHedgeFlag
-        <<"LimitPrice:"<<pOrder->LimitPrice
-        <<"VolumeTotalOriginal:"<<pOrder->VolumeTotalOriginal
-        <<"TimeCondition:"<<pOrder->TimeCondition
-        <<"GTDDate:"<<pOrder->GTDDate
-        <<"VolumeCondition:"<<pOrder->VolumeCondition
-        <<"MinVolume:"<<pOrder->MinVolume
-        <<"ContingentCondition:"<<pOrder->ContingentCondition
-        <<"StopPrice:"<<pOrder->StopPrice
-        <<"ForceCloseReason:"<<pOrder->ForceCloseReason
-        <<"IsAutoSuspend:"<<pOrder->IsAutoSuspend
-        <<"BusinessUnit:"<<pOrder->BusinessUnit
-        <<"RequestID:"<<pOrder->RequestID
-        <<"OrderLocalID:"<<pOrder->OrderLocalID
-        <<"ExchangeID:"<<pOrder->ExchangeID
-        <<"ParticipantID:"<<pOrder->ParticipantID
-        <<"ClientID:"<<pOrder->ClientID
-        <<"ExchangeInstID:"<<pOrder->ExchangeInstID
-        <<"TraderID:"<<pOrder->TraderID
-        <<"InstallID:"<<pOrder->InstallID
-        <<"OrderSubmitStatus:"<<pOrder->OrderSubmitStatus
-        <<"NotifySequence:"<<pOrder->NotifySequence
-        <<"TradingDay:"<<pOrder->TradingDay
-        <<"SettlementID:"<<pOrder->SettlementID
-        <<"OrderSysID:"<<pOrder->OrderSysID
-        <<"OrderSource:"<<pOrder->OrderSource
-        <<"OrderStatus:"<<pOrder->OrderStatus
-        <<"OrderType:"<<pOrder->OrderType
-        <<"VolumeTraded:"<<pOrder->VolumeTraded
-        <<"VolumeTotal:"<<pOrder->VolumeTotal
-        <<"InsertDate:"<<pOrder->InsertDate
-        <<"InsertTime:"<<pOrder->InsertTime
-        <<"ActiveTime:"<<pOrder->ActiveTime
-        <<"SuspendTime:"<<pOrder->SuspendTime
-        <<"UpdateTime:"<<pOrder->UpdateTime
-        <<"CancelTime:"<<pOrder->CancelTime
-        <<"ActiveTraderID:"<<pOrder->ActiveTraderID
-        <<"ClearingPartID:"<<pOrder->ClearingPartID
-        <<"SequenceNo:"<<pOrder->SequenceNo
-        <<"FrontID:"<<pOrder->FrontID
-        <<"SessionID:"<<pOrder->SessionID
-        <<"UserProductInfo:"<<pOrder->UserProductInfo
-        <<"StatusMsg:"<<pOrder->StatusMsg
-        <<"UserForceClose:"<<pOrder->UserForceClose
-        <<"ActiveUserID:"<<pOrder->ActiveUserID
-        <<"BrokerOrderSeq:"<<pOrder->BrokerOrderSeq
-        <<"RelativeOrderSysID:"<<pOrder->RelativeOrderSysID
-        <<"ZCETotalTradedVolume:"<<pOrder->ZCETotalTradedVolume
-        <<"IsSwapOrder:"<<pOrder->IsSwapOrder);
+        <<",InvestorID:"<<pOrder->InvestorID
+        <<",InstrumentID:"<<pOrder->InstrumentID
+        <<",OrderRef:"<<pOrder->OrderRef
+        <<",UserID:"<<pOrder->UserID
+        <<",OrderPriceType:"<<pOrder->OrderPriceType
+        <<",Direction:"<<pOrder->Direction
+        <<",CombOffsetFlag:"<<pOrder->CombOffsetFlag
+        <<",CombHedgeFlag:"<<pOrder->CombHedgeFlag
+        <<",LimitPrice:"<<pOrder->LimitPrice
+        <<",VolumeTotalOriginal:"<<pOrder->VolumeTotalOriginal
+        <<",TimeCondition:"<<pOrder->TimeCondition
+        <<",GTDDate:"<<pOrder->GTDDate
+        <<",VolumeCondition:"<<pOrder->VolumeCondition
+        <<",MinVolume:"<<pOrder->MinVolume
+        <<",ContingentCondition:"<<pOrder->ContingentCondition
+        <<",StopPrice:"<<pOrder->StopPrice
+        <<",ForceCloseReason:"<<pOrder->ForceCloseReason
+        <<",IsAutoSuspend:"<<pOrder->IsAutoSuspend
+        <<",BusinessUnit:"<<pOrder->BusinessUnit
+        <<",RequestID:"<<pOrder->RequestID
+        <<",OrderLocalID:"<<pOrder->OrderLocalID
+        <<",ExchangeID:"<<pOrder->ExchangeID
+        <<",ParticipantID:"<<pOrder->ParticipantID
+        <<",ClientID:"<<pOrder->ClientID
+        <<",ExchangeInstID:"<<pOrder->ExchangeInstID
+        <<",TraderID:"<<pOrder->TraderID
+        <<",InstallID:"<<pOrder->InstallID
+        <<",OrderSubmitStatus:"<<pOrder->OrderSubmitStatus
+        <<",NotifySequence:"<<pOrder->NotifySequence
+        <<",TradingDay:"<<pOrder->TradingDay
+        <<",SettlementID:"<<pOrder->SettlementID
+        <<",OrderSysID:"<<pOrder->OrderSysID
+        <<",OrderSource:"<<pOrder->OrderSource
+        <<",OrderStatus:"<<pOrder->OrderStatus
+        <<",OrderType:"<<pOrder->OrderType
+        <<",VolumeTraded:"<<pOrder->VolumeTraded
+        <<",VolumeTotal:"<<pOrder->VolumeTotal
+        <<",InsertDate:"<<pOrder->InsertDate
+        <<",InsertTime:"<<pOrder->InsertTime
+        <<",ActiveTime:"<<pOrder->ActiveTime
+        <<",SuspendTime:"<<pOrder->SuspendTime
+        <<",UpdateTime:"<<pOrder->UpdateTime
+        <<",CancelTime:"<<pOrder->CancelTime
+        <<",ActiveTraderID:"<<pOrder->ActiveTraderID
+        <<",ClearingPartID:"<<pOrder->ClearingPartID
+        <<",SequenceNo:"<<pOrder->SequenceNo
+        <<",FrontID:"<<pOrder->FrontID
+        <<",SessionID:"<<pOrder->SessionID
+        <<",UserProductInfo:"<<pOrder->UserProductInfo
+        <<",StatusMsg:"<<pOrder->StatusMsg
+        <<",UserForceClose:"<<pOrder->UserForceClose
+        <<",ActiveUserID:"<<pOrder->ActiveUserID
+        <<",BrokerOrderSeq:"<<pOrder->BrokerOrderSeq
+        <<",RelativeOrderSysID:"<<pOrder->RelativeOrderSysID
+        <<",ZCETotalTradedVolume:"<<pOrder->ZCETotalTradedVolume
+        <<",IsSwapOrder:"<<pOrder->IsSwapOrder);
     }
 }
 
@@ -207,33 +207,33 @@ void CTPMarket::OnRtnTrade(CThostFtdcTradeField *pTrade)
         INFO(mLog,"OnRtnTrade--------BrokerID:" << pTrade->BrokerID
             <<",InvestorID:" <<  pTrade->InvestorID
             <<",UserID:" << pTrade->UserID
-            <<"InstrumentID:"<<pTrade->InstrumentID
-            <<"OrderRef:"<<pTrade->OrderRef
-            <<"ExchangeID:"<<pTrade->ExchangeID
-            <<"TradeID:"<<pTrade->TradeID
-            <<"Direction:"<<pTrade->Direction
-            <<"OrderSysID:"<<pTrade->OrderSysID
-            <<"ParticipantID:"<<pTrade->ParticipantID
-            <<"ClientID:"<<pTrade->ClientID
-            <<"TradingRole:"<<pTrade->TradingRole
-            <<"ExchangeInstID:"<<pTrade->ExchangeInstID
-            <<"OffsetFlag:"<<pTrade->OffsetFlag
-            <<"HedgeFlag:"<<pTrade->HedgeFlag
-            <<"Price:"<<pTrade->Price
-            <<"Volume:"<<pTrade->Volume
-            <<"TradeDate:"<<pTrade->TradeDate
-            <<"TradeTime:"<<pTrade->TradeTime
-            <<"TradeType:"<<pTrade->TradeType
-            <<"PriceSource:"<<pTrade->PriceSource
-            <<"TraderID:"<<pTrade->TraderID
-            <<"OrderLocalID:"<<pTrade->OrderLocalID
-            <<"ClearingPartID:"<<pTrade->ClearingPartID
-            <<"BusinessUnit:"<<pTrade->BusinessUnit
-            <<"SequenceNo:"<<pTrade->SequenceNo
-            <<"TradingDay:"<<pTrade->TradingDay
-            <<"SettlementID:"<<pTrade->SettlementID
-            <<"BrokerOrderSeq:"<<pTrade->BrokerOrderSeq
-            <<"TradeSource:"<<pTrade->TradeSource);
+            <<",InstrumentID:"<<pTrade->InstrumentID
+            <<",OrderRef:"<<pTrade->OrderRef
+            <<",ExchangeID:"<<pTrade->ExchangeID
+            <<",TradeID:"<<pTrade->TradeID
+            <<",Direction:"<<pTrade->Direction
+            <<",OrderSysID:"<<pTrade->OrderSysID
+            <<",ParticipantID:"<<pTrade->ParticipantID
+            <<",ClientID:"<<pTrade->ClientID
+            <<",TradingRole:"<<pTrade->TradingRole
+            <<",ExchangeInstID:"<<pTrade->ExchangeInstID
+            <<",OffsetFlag:"<<pTrade->OffsetFlag
+            <<",HedgeFlag:"<<pTrade->HedgeFlag
+            <<",Price:"<<pTrade->Price
+            <<",Volume:"<<pTrade->Volume
+            <<",TradeDate:"<<pTrade->TradeDate
+            <<",TradeTime:"<<pTrade->TradeTime
+            <<",TradeType:"<<pTrade->TradeType
+            <<",PriceSource:"<<pTrade->PriceSource
+            <<",TraderID:"<<pTrade->TraderID
+            <<",OrderLocalID:"<<pTrade->OrderLocalID
+            <<",ClearingPartID:"<<pTrade->ClearingPartID
+            <<",BusinessUnit:"<<pTrade->BusinessUnit
+            <<",SequenceNo:"<<pTrade->SequenceNo
+            <<",TradingDay:"<<pTrade->TradingDay
+            <<",SettlementID:"<<pTrade->SettlementID
+            <<",BrokerOrderSeq:"<<pTrade->BrokerOrderSeq
+            <<",TradeSource:"<<pTrade->TradeSource);
     }
 }
 
@@ -245,31 +245,31 @@ void CTPMarket::OnErrRtnOrderInsert(CThostFtdcInputOrderField * pInputOrder, CTh
 void CTPMarket::OnErrRtnOrderAction(CThostFtdcOrderActionField *pOrderAction, CThostFtdcRspInfoField *pRspInfo)
 {
     INFO(mLog,"OnErrRtnOrderAction(" <<pRspInfo->ErrorID<<","<<pRspInfo->ErrorMsg<<")"
-        <<"BrokerID:"<<pOrderAction->BrokerID
-        <<"InvestorID:"<<pOrderAction->InvestorID
-        <<"OrderActionRef:"<<pOrderAction->OrderActionRef
-        <<"OrderRef:"<<pOrderAction->OrderRef
-        <<"RequestID:"<<pOrderAction->RequestID
-        <<"FrontID:"<<pOrderAction->FrontID
-        <<"SessionID:"<<pOrderAction->SessionID
-        <<"ExchangeID:"<<pOrderAction->ExchangeID
-        <<"OrderSysID:"<<pOrderAction->OrderSysID
-        <<"ActionFlag:"<<pOrderAction->ActionFlag
-        <<"LimitPrice:"<<pOrderAction->LimitPrice
-        <<"VolumeChange:"<<pOrderAction->VolumeChange
-        <<"ActionDate:"<<pOrderAction->ActionDate
-        <<"ActionTime:"<<pOrderAction->ActionTime
-        <<"TraderID:"<<pOrderAction->TraderID
-        <<"InstallID:"<<pOrderAction->InstallID
-        <<"OrderLocalID:"<<pOrderAction->OrderLocalID
-        <<"ActionLocalID:"<<pOrderAction->ActionLocalID
-        <<"ParticipantID:"<<pOrderAction->ParticipantID
-        <<"ClientID:"<<pOrderAction->ClientID
-        <<"BusinessUnit:"<<pOrderAction->BusinessUnit
-        <<"OrderActionStatus:"<<pOrderAction->OrderActionStatus
-        <<"UserID:"<<pOrderAction->UserID
-        <<"StatusMsg:"<<pOrderAction->StatusMsg
-        <<"InstrumentID:"<<pOrderAction->InstrumentID);
+        <<",BrokerID:"<<pOrderAction->BrokerID
+        <<",InvestorID:"<<pOrderAction->InvestorID
+        <<",OrderActionRef:"<<pOrderAction->OrderActionRef
+        <<",OrderRef:"<<pOrderAction->OrderRef
+        <<",RequestID:"<<pOrderAction->RequestID
+        <<",FrontID:"<<pOrderAction->FrontID
+        <<",SessionID:"<<pOrderAction->SessionID
+        <<",ExchangeID:"<<pOrderAction->ExchangeID
+        <<",OrderSysID:"<<pOrderAction->OrderSysID
+        <<",ActionFlag:"<<pOrderAction->ActionFlag
+        <<",LimitPrice:"<<pOrderAction->LimitPrice
+        <<",VolumeChange:"<<pOrderAction->VolumeChange
+        <<",ActionDate:"<<pOrderAction->ActionDate
+        <<",ActionTime:"<<pOrderAction->ActionTime
+        <<",TraderID:"<<pOrderAction->TraderID
+        <<",InstallID:"<<pOrderAction->InstallID
+        <<",OrderLocalID:"<<pOrderAction->OrderLocalID
+        <<",ActionLocalID:"<<pOrderAction->ActionLocalID
+        <<",ParticipantID:"<<pOrderAction->ParticipantID
+        <<",ClientID:"<<pOrderAction->ClientID
+        <<",BusinessUnit:"<<pOrderAction->BusinessUnit
+        <<",OrderActionStatus:"<<pOrderAction->OrderActionStatus
+        <<",UserID:"<<pOrderAction->UserID
+        <<",StatusMsg:"<<pOrderAction->StatusMsg
+        <<",InstrumentID:"<<pOrderAction->InstrumentID);
 }
 
 void CTPMarket::OnHeartBeatWarning(int /*nTimeLapse*/)
